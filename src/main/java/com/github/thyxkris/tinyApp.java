@@ -42,7 +42,7 @@ public class tinyApp {
         try {
             myHostname = InetAddress.getLocalHost().getHostName();
         } catch (Exception e) {
-            myHostname = InetAddress.getLocalHost().getAddress().toString();
+            myHostname = e.getMessage().substring(0,e.getMessage().indexOf(":"));
         }
         sb.append("Hello/Hallo/Salut/NiHao By:").append(myHostname).append("<br/>");
         String sourceIP = request.ip();
@@ -99,7 +99,7 @@ public class tinyApp {
         try {
             myHostname = InetAddress.getLocalHost().getHostName();
         } catch (Exception e) {
-            myHostname = InetAddress.getLocalHost().getAddress().toString();
+            myHostname = e.getMessage().substring(0,e.getMessage().indexOf(":"));
         }
         sb.append("Hello/Hallo/Salut/NiHao By:").append(myHostname).append("<br/>");
         String sourceIP = request.ip();
